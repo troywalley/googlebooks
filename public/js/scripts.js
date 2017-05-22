@@ -26,12 +26,14 @@ function getAjax(book){
     dataType: "json",
     success: function(response) {
       console.log(response)
+      var container=document.getElementsByClassName("results-container")[0];
+      container.innerHTML="";
         response.items.forEach(function(response){
 
 
 
           var div=document.createElement("div")
-          var container=document.getElementsByClassName("results-container")[0]
+
           div.innerHTML=response.volumeInfo.title
           container.appendChild(div)
           div.addEventListener("click", function(event){
