@@ -1,8 +1,9 @@
 
 var searchButton= document.getElementsByClassName('search')[0];
 searchButton.addEventListener("click", function(){
-  var input=document.getElementsByClassName('book')[0];
+  var input=document.getElementById('book');
   var inputSearch=input.value;
+  console.log(inputSearch)
   getAjax(inputSearch);
 })
 
@@ -10,6 +11,7 @@ searchButton.addEventListener("click", function(){
 
 
 function getAjax(book){
+  console.log("test")
  $.ajax({
       method: "get",
     url: "https://www.googleapis.com/books/v1/volumes",
@@ -21,29 +23,8 @@ function getAjax(book){
 
     dataType: "json",
     success: function(response) {
+      console.log(response)
         response.items.forEach(function(response){
-<<<<<<< HEAD
-          console.log("hi");
-          // var div=document.createElement("div");
-          // var container=document.getElementsByClassName("results-container")[0];
-          // var form=document.createElement("form");
-          // var input=document.createElement("input");
-          // form.action="/search";
-          // form.method="post";
-          // input.type="hidden";
-          // input.value=response;
-          // form.appendChild(input);
-          // div.innerHTML=response.volumeInfo.title;
-          // container.appendChild(div);
-
-        })
-      }
-
-  })
-}
-
-
-=======
           var div=document.createElement("div")
           var container=document.getElementsByClassName("results-container")[0]
           div.innerHTML=response.volumeInfo.title
@@ -59,8 +40,8 @@ function getAjax(book){
               success: function(response){
                 console.log(response)
               },
-              error: function(response)
-              
+
+
             })
           })
 
@@ -68,8 +49,8 @@ function getAjax(book){
       }
 })
 }
-GetAjax("Harry Potter")
->>>>>>> troy
+getAjax("Harry Potter")
+
 // xhttp.open("GET", "https://www.googleapis.com/books/v1/volumes", true);
 // xhttp.send();
 // function loadDoc() {
