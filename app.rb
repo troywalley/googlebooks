@@ -26,7 +26,7 @@ post '/sign_in' do
 	else
 		flash[:notice] = "Wrong User Name and/or Password"
 
-		redirect '/sign_in'
+		redirect '/'
 	end
 end
 
