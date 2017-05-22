@@ -2,7 +2,6 @@ before  do
 	@current_user = session[:user_id] if session[:user_id]
 end
 	
-end
 get '/' do
 
   erb :sign_in
@@ -14,9 +13,13 @@ get '/sign_up' do
 end
 
 post '/sign_in' do	
+	@current_user
 end
 
 post '/sign_up' do
+User.create(username: params[:username], email: params[:email], password: params[:password])
+
+	redirect '/home'
 end
 
 post '/home' do
