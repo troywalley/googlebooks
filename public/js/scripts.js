@@ -1,3 +1,4 @@
+
 function GetAjax(book){
  $.ajax({
       method: "get",
@@ -25,10 +26,17 @@ function GetAjax(book){
 
         })
 
-    }
 
-})
-
-}
-
-GetAjax("Harry Potter")
+// xhttp.open("GET", "https://www.googleapis.com/books/v1/volumes", true);
+// xhttp.send();
+// function loadDoc() {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       document.getElementById("demo").innerHTML = this.responseText;
+//
+//     }
+//   };
+//   xhttp.open("GET", "demo_get.asp", true);
+//   xhttp.send();
+// }
