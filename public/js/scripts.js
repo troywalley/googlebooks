@@ -3,7 +3,9 @@ var searchButton= document.getElementsByClassName('search')[0];
 searchButton.addEventListener("click", function(){
   var input=document.getElementsByClassName('book')[0];
   var inputSearch=input.value;
+
   console.log(inputSearch);
+
   getAjax(inputSearch);
 })
 
@@ -11,6 +13,7 @@ searchButton.addEventListener("click", function(){
 
 
 function getAjax(book){
+  console.log("test")
  $.ajax({
       method: "get",
     url: "https://www.googleapis.com/books/v1/volumes",
@@ -22,7 +25,10 @@ function getAjax(book){
 
     dataType: "json",
     success: function(response) {
+      console.log(response)
         response.items.forEach(function(response){
+
+
 
           var div=document.createElement("div")
           var container=document.getElementsByClassName("results-container")[0]
@@ -39,7 +45,8 @@ function getAjax(book){
               success: function(response){
                 console.log(response)
               },
-              error: function(response)
+
+
 
             })
           })
@@ -48,6 +55,10 @@ function getAjax(book){
       }
 })
 }
+
+getAjax("Harry Potter")
+
+
 // xhttp.open("GET", "https://www.googleapis.com/books/v1/volumes", true);
 // xhttp.send();
 // function loadDoc() {
