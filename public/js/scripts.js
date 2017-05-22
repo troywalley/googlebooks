@@ -22,7 +22,7 @@ function getAjax(book){
     dataType: "json",
     success: function(response) {
         response.items.forEach(function(response){
-          console.log("hi");
+          console.log(response);
           // var div=document.createElement("div");
           // var container=document.getElementsByClassName("results-container")[0];
           // var form=document.createElement("form");
