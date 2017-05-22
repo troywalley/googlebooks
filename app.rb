@@ -21,8 +21,3 @@ end
 #   user=User.where(username: username).first
 #   user.password==password ? erb :home : erb :sign_in
 # end
-
-
-get '/search' do
-
-end
