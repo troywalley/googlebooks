@@ -1,19 +1,20 @@
 before  do
 	@current_user = session[:user_id] if session[:user_id]
 end
-	
+
+
 get '/' do
   erb :sign_in
-end
-
-get '/home' do
-	erb :home
 end
 
 get '/sign_up' do
 	erb :sign_up
 end
 	
+get '/home' do
+	erb :home
+end	
+
 post '/sign_in' do
 	@current_user
 
