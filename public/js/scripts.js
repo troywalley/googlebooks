@@ -3,6 +3,7 @@ var searchButton= document.getElementsByClassName('search')[0];
 searchButton.addEventListener("click", function(){
   var input=document.getElementsByClassName('book')[0];
   var inputSearch=input.value;
+  console.log(inputSearch);
   getAjax(inputSearch);
 })
 
