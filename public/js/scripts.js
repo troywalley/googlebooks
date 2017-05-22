@@ -1,7 +1,7 @@
 
 var searchButton= document.getElementsByClassName('search')[0];
 searchButton.addEventListener("click", function(){
-  var input=document.getElementById('book');
+  var input=document.getElementsByClassName('book')[0];
   var inputSearch=input.value;
   console.log(inputSearch)
   getAjax(inputSearch);
@@ -25,6 +25,9 @@ function getAjax(book){
     success: function(response) {
       console.log(response)
         response.items.forEach(function(response){
+
+
+
           var div=document.createElement("div")
           var container=document.getElementsByClassName("results-container")[0]
           div.innerHTML=response.volumeInfo.title
@@ -42,6 +45,7 @@ function getAjax(book){
               },
 
 
+
             })
           })
 
@@ -49,7 +53,9 @@ function getAjax(book){
       }
 })
 }
+
 getAjax("Harry Potter")
+
 
 // xhttp.open("GET", "https://www.googleapis.com/books/v1/volumes", true);
 // xhttp.send();
