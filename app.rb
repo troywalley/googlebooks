@@ -3,17 +3,30 @@ before  do
 end
 	
 get '/' do
-
   erb :sign_in
 end
 
-get '/sign_up' do
-	
-	erb :sign_up
+get '/home' do
+	erb :home
 end
 
-post '/sign_in' do	
+get '/sign_up' do
+	erb :sign_up
+end
+	
+post '/sign_in' do
 	@current_user
+
+	user = User.where(username: params[:username]).first
+	if user && user.password == params[:password]
+		@current_user
+
+		redirect '/home'
+	else
+		flash[:notice] = "Wrong User Name and/or Password"
+
+		redirect '/sign_in'
+	end
 end
 
 post '/sign_up' do
