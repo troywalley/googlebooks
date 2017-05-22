@@ -1,0 +1,15 @@
+require 'sinatra'
+require 'sinatra/activerecord'
+
+set :database, "sqlite3:googlebooks.sqlite3"
+set :sessions, true
+require './models'
+# get '/' do
+#   erb :sign_in
+# end
+# post '/' do
+#   username=params[:username]
+#   password=params[:password]
+#   user=User.where(username: username).first
+#   user.password==password ? erb :home : erb :sign_in
+# end
