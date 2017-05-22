@@ -22,6 +22,7 @@ function getAjax(book){
     dataType: "json",
     success: function(response) {
         response.items.forEach(function(response){
+<<<<<<< HEAD
           console.log("hi");
           // var div=document.createElement("div");
           // var container=document.getElementsByClassName("results-container")[0];
@@ -42,6 +43,33 @@ function getAjax(book){
 }
 
 
+=======
+          var div=document.createElement("div")
+          var container=document.getElementsByClassName("results-container")[0]
+          div.innerHTML=response.volumeInfo.title
+          container.appendChild(div)
+          div.addEventListener("click", function(event){
+            $.ajax({
+              method: "post",
+              url:"/home",
+              data:{
+                url: "test"
+              },
+              dataType: "json",
+              success: function(response){
+                console.log(response)
+              },
+              error: function(response)
+              
+            })
+          })
+
+        })
+      }
+})
+}
+GetAjax("Harry Potter")
+>>>>>>> troy
 // xhttp.open("GET", "https://www.googleapis.com/books/v1/volumes", true);
 // xhttp.send();
 // function loadDoc() {
